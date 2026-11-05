@@ -27,7 +27,7 @@ The application achieves near-perfect PageSpeed Insights metrics on mobile devic
 | **Total Blocking Time (TBT)** | **20 ms** | 🟢 Fast |
 | **Cumulative Layout Shift (CLS)** | **0.019** | 🟢 Stable |
 
-![Mobile PageSpeed Insights Score](<img width="871" height="678" alt="Screen Shot 2026-11-05 at 7 08 50 PM" src="https://github.com/user-attachments/assets/56603256-b7af-4a4f-b49d-f0b6d42ec041" />
+![Mobile PageSpeed Insights Score](https://github.com/user-attachments/assets/56603256-b7af-4a4f-b49d-f0b6d42ec041
 )
 
 ---
