@@ -27,7 +27,8 @@ The application achieves near-perfect PageSpeed Insights metrics on mobile devic
 | **Total Blocking Time (TBT)** | **20 ms** | 🟢 Fast |
 | **Cumulative Layout Shift (CLS)** | **0.019** | 🟢 Stable |
 
-![Mobile PageSpeed Insights Score](./assets/pagespeed-score.jpg)
+![Mobile PageSpeed Insights Score](<img width="871" height="678" alt="Screen Shot 2026-11-05 at 7 08 50 PM" src="https://github.com/user-attachments/assets/56603256-b7af-4a4f-b49d-f0b6d42ec041" />
+)
 
 ---
 
@@ -247,4 +248,4 @@ export const serverRoutes: ServerRoute[] = [
    ```bash
    npm run serve:ssr:environmentalService
    # Runs Node Express server on http://localhost:4000
-   ```<img width="861" height="678" alt="Screen Shot 2026-11-05 at 7 06 51 PM" src="https://github.com/user-attachments/assets/777adfce-c3f3-4759-911b-3ef9d0ca7004" />
+   ```
