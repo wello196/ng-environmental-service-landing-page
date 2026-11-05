@@ -1,0 +1,709 @@
+.services-section {
+  position: relative;
+  width: 100%;
+  padding: 110px 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(22, 163, 74, 0.055),
+      transparent 34%
+    ),
+    #ffffff;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.services-container {
+  width: min(100%, 1100px);
+  margin-inline: auto;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.services-header {
+  max-width: 700px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.services-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 13px;
+  margin-bottom: 18px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+
+  background: #f0fdf4;
+  color: #15803d;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.services-kicker-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.13);
+
+  animation: servicesPulse 2.2s ease-in-out infinite;
+}
+
+.services-title {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.services-title span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #166534,
+      #16a34a,
+      #15803d
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-subtitle {
+  max-width: 540px;
+
+  margin: 18px auto 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   SERVICE SYSTEM
+   ========================= */
+
+.services-system {
+  position: relative;
+
+  width: min(100%, 900px);
+  min-height: 620px;
+
+  margin-inline: auto;
+}
+
+
+/* =========================
+   ORBITS
+   ========================= */
+
+.services-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border: 1px dashed rgba(21, 128, 61, 0.18);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+.services-orbit-one {
+  width: 430px;
+  height: 430px;
+
+  animation: orbitRotate 28s linear infinite;
+}
+
+.services-orbit-two {
+  width: 610px;
+  height: 610px;
+
+  border-color: rgba(21, 128, 61, 0.08);
+
+  animation: orbitRotateReverse 40s linear infinite;
+}
+
+
+/* =========================
+   CENTER
+   ========================= */
+
+.services-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 150px;
+  height: 150px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #22c55e,
+      #15803d 65%,
+      #14532d
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 30px 70px rgba(21, 128, 61, 0.22),
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+  z-index: 5;
+
+  animation: centerFloat 4s ease-in-out infinite;
+}
+
+.services-center-ring {
+  position: absolute;
+
+  inset: -12px;
+
+  border: 1px solid rgba(34, 197, 94, 0.25);
+
+  border-radius: 50%;
+
+  animation: centerRing 2.8s ease-out infinite;
+}
+
+
+
+.services-center span {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   SERVICE CARDS
+   ========================= */
+
+.service-node {
+  position: absolute;
+
+  width: 250px;
+  min-height: 145px;
+
+  padding: 20px;
+
+  background: rgba(255,255,255,.94);
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 55px rgba(15, 23, 42, 0.07);
+
+  backdrop-filter: blur(10px);
+
+  text-align: right;
+
+  transition:
+    transform .35s cubic-bezier(.22,1,.36,1),
+    box-shadow .35s ease,
+    border-color .35s ease;
+
+  z-index: 4;
+}
+
+.service-node:hover {
+  transform: translateY(-8px);
+
+  border-color: #86efac;
+
+  box-shadow:
+    0 28px 65px rgba(21, 128, 61, 0.13);
+}
+
+
+/* Small green ambient light */
+
+.service-node::before {
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  left: -35px;
+  top: -35px;
+
+  border-radius: 50%;
+
+  background: rgba(34,197,94,.07);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   CARD POSITIONS
+   ========================= */
+
+.service-node-1 {
+  top: 25px;
+  right: 25px;
+
+  animation: nodeFloatOne 5s ease-in-out infinite;
+}
+
+.service-node-2 {
+  top: 25px;
+  left: 25px;
+
+  animation: nodeFloatTwo 5.5s ease-in-out infinite;
+}
+
+.service-node-3 {
+  top: 235px;
+  right: 0;
+
+  animation: nodeFloatThree 5.2s ease-in-out infinite;
+}
+
+.service-node-4 {
+  top: 235px;
+  left: 0;
+
+  animation: nodeFloatFour 5.7s ease-in-out infinite;
+}
+
+.service-node-5 {
+  bottom: 2px;
+  right: 40px;
+
+  animation: nodeFloatTwo 5.3s ease-in-out infinite;
+}
+
+.service-node-6 {
+  bottom: 2px;
+  left: 40px;
+
+  animation: nodeFloatOne 5.8s ease-in-out infinite;
+}
+
+
+/* =========================
+   ICON
+   ========================= */
+
+.service-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 12px;
+
+  border-radius: 15px;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+
+  transition:
+    transform .3s ease,
+    background .3s ease;
+}
+
+.service-node:hover .service-node-icon {
+  transform: rotate(-6deg) scale(1.08);
+
+  background: #dcfce7;
+}
+
+.service-node-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+
+/* =========================
+   NUMBER
+   ========================= */
+
+.service-node-number {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================
+   TEXT
+   ========================= */
+
+.service-node h3 {
+  position: relative;
+
+  margin: 0 0 7px;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 850;
+}
+
+.service-node p {
+  position: relative;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes servicesPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: .8;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+@keyframes centerFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    transform: translate(-50%, calc(-50% - 8px));
+  }
+}
+
+@keyframes centerRing {
+  0% {
+    transform: scale(.9);
+    opacity: .7;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+
+
+@keyframes orbitRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes nodeFloatOne {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes nodeFloatTwo {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes nodeFloatThree {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes nodeFloatFour {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 850px) {
+
+  .services-system {
+    min-height: 850px;
+  }
+
+  .services-orbit-one {
+    width: 390px;
+    height: 390px;
+  }
+
+  .services-orbit-two {
+    width: 560px;
+    height: 560px;
+  }
+
+  .service-node {
+    width: 220px;
+    margin-top:100px
+  }
+
+  .service-node-1 {
+    right: 0;
+  }
+
+  .service-node-2 {
+    left: 0;
+  }
+
+  .service-node-5 {
+    right: 0;
+    bottom:120px
+  }
+
+  .service-node-6 {
+    left: 0;
+    bottom:120px
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 640px) {
+
+  .services-section {
+    padding: 80px 16px;
+  }
+
+  .services-header {
+    margin-bottom: 45px;
+  }
+
+  .services-title {
+    font-size: 34px;
+  }
+
+  .services-subtitle {
+    font-size: 14px;
+  }
+
+  .services-system {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    min-height: auto;
+  }
+
+  .services-center {
+    position: relative;
+
+    left: 60px;
+    top: 50px;
+
+    grid-column: 1 / -1;
+
+    width: 130px;
+    height: 130px;
+
+    margin: 10px auto 10px;
+
+    transform: none;
+  }
+
+  .services-orbit {
+    display: none;
+  }
+
+  .services-recycle-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .service-node {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    width: auto;
+    min-height: 155px;
+
+    padding: 16px;
+
+    animation: none;
+    margin-top:20px;
+  }
+
+  .service-node:hover {
+    transform: translateY(-4px);
+  }
+
+  .service-node-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .service-node h3 {
+    font-size: 15px;
+  }
+
+  .service-node p {
+    font-size: 12px;
+  }
+
+  .service-node-number {
+    top: 16px;
+    left: 16px;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .services-kicker-dot,
+  .services-center,
+  .services-center-ring,
+  .services-recycle-icon,
+  .services-orbit,
+  .service-node {
+    animation: none;
+  }
+}
+
+
+
+.service-process-icon {
+  width: 86px;
+  height: 86px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  color: white;
+}
+
+.rotating-recycle-arrow {
+  width: 58px;
+  height: 58px;
+  animation: rotateRecycleArrow 5s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotateRecycleArrow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotating-recycle-arrow {
+    animation: none;
+  }
+}
+
+
+

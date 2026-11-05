@@ -1,0 +1,440 @@
+.about-section-dark {
+  background: #062e20;
+  color: #f0fdf4;
+  padding: 90px 20px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 55px;
+  align-items: center;
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.about-content {
+  min-width: 0;
+}
+
+.about-kicker-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding: 7px 15px;
+  border-radius: 999px;
+
+  background: rgba(34, 197, 94, 0.10);
+  border: 1px solid rgba(74, 222, 128, 0.30);
+
+  color: #86efac;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about-kicker-dot-dark {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.15);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.about-title-dark {
+  max-width: 720px;
+
+  margin: 0 0 22px;
+
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 900;
+  line-height: 1.25;
+
+  letter-spacing: -0.8px;
+
+  color: #ffffff;
+}
+
+.about-title-dark span {
+  display: block;
+  margin-top: 5px;
+
+  color: #4ade80;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.about-lead-dark {
+  max-width: 700px;
+
+  margin: 0 0 17px;
+
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 700;
+
+  color: #d1fae5;
+}
+
+.about-text-dark {
+  max-width: 700px;
+
+  margin: 0 0 32px;
+
+  font-size: 15px;
+  line-height: 1.9;
+
+  color: #9fcbb4;
+}
+
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.about-branches-dark {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.branch-card-dark {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  padding: 17px;
+
+  border-radius: 16px;
+
+  background: #0a3b2a;
+  border: 1px solid #145c40;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.branch-card-dark:hover {
+  transform: translateX(-4px);
+
+  background: #0d4532;
+  border-color: rgba(74, 222, 128, 0.45);
+}
+
+
+/* =========================
+   SERVICE ICON
+========================= */
+
+.branch-icon-dark {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(34, 197, 94, 0.14);
+
+  color: #4ade80;
+}
+
+.branch-icon-dark svg {
+  width: 21px;
+  height: 21px;
+}
+
+
+/* =========================
+   SERVICE TEXT
+========================= */
+
+.branch-info-dark {
+  min-width: 0;
+}
+
+.branch-info-dark h4 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.branch-info-dark p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  color: #9fcbb4;
+}
+
+
+/* =========================
+   RIGHT / STATS COLUMN
+========================= */
+
+.about-stats-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* =========================
+   STATS CARD
+========================= */
+
+.stats-card-dark {
+  position: relative;
+
+  padding: 32px;
+
+  border-radius: 24px;
+
+  background: #0a3b2a;
+  border: 1px solid #145c40;
+
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.stat-number {
+  margin-bottom: 7px;
+
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+
+  letter-spacing: -1px;
+
+  color: #4ade80;
+}
+
+.stat-label {
+  max-width: 280px;
+  text-decoration: none;
+
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 700;
+
+  color: #c7e8d6;
+}
+
+.stat-divider-dark {
+  border: 0;
+  border-top: 1px solid #145c40;
+
+  margin: 22px 0;
+}
+
+
+/* =========================
+   HIGHLIGHT BOX
+========================= */
+
+.about-highlight-box-dark {
+  padding: 25px;
+
+  border-radius: 20px;
+
+  background: rgba(34, 197, 94, 0.10);
+
+  border: 1px solid rgba(74, 222, 128, 0.30);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.highlight-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 10px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  color: #86efac;
+}
+
+.highlight-header svg {
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+}
+
+.about-highlight-box-dark p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.8;
+
+  color: #c7e8d6;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .about-section-dark {
+    padding: 70px 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-title-dark {
+    max-width: 650px;
+  }
+
+  .about-lead-dark,
+  .about-text-dark {
+    max-width: 100%;
+  }
+
+  .about-stats-column {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .about-section-dark {
+    padding: 60px 16px;
+  }
+
+  .about-kicker-dark {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .about-title-dark {
+    font-size: 30px;
+    line-height: 1.3;
+    letter-spacing: -0.4px;
+  }
+
+  .about-lead-dark {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .about-text-dark {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .branch-card-dark {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .branch-icon-dark {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .branch-icon-dark svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .branch-info-dark h4 {
+    font-size: 14px;
+  }
+
+  .branch-info-dark p {
+    font-size: 12px;
+  }
+
+  .stats-card-dark {
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .stat-number {
+    font-size: 34px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+  }
+
+  .about-highlight-box-dark {
+    padding: 20px;
+  }
+
+  .about-highlight-box-dark p {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .about-title-dark {
+    font-size: 27px;
+  }
+
+  .about-lead-dark {
+    font-size: 15px;
+  }
+
+  .stats-card-dark {
+    padding: 22px;
+  }
+
+  .branch-card-dark {
+    padding: 13px;
+  }
+}
+
+
