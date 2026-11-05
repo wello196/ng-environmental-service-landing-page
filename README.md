@@ -10,17 +10,38 @@ Experience the live application online:
 
 🚀 [**View Live Demo**](https://masreyaenvironment.com)
 
+---
+
+## ⚡ Performance & Core Web Vitals
+
+The application achieves near-perfect PageSpeed Insights metrics on mobile devices, validating the efficiency of Angular SSR (`@angular/ssr`), client-side hydration, and asset optimization:
+
+| Metric | Score / Value | Status |
+| :--- | :--- | :--- |
+| **Performance** | **100 / 100** | 🟢 Optimal |
+| **SEO** | **100 / 100** | 🟢 Optimal |
+| **Best Practices** | **100 / 100** | 🟢 Optimal |
+| **Accessibility** | **92 / 100** | 🟢 Optimal |
+| **First Contentful Paint (FCP)** | **0.9 s** | 🟢 Fast |
+| **Largest Contentful Paint (LCP)** | **1.1 s** | 🟢 Fast |
+| **Total Blocking Time (TBT)** | **20 ms** | 🟢 Fast |
+| **Cumulative Layout Shift (CLS)** | **0.019** | 🟢 Stable |
+
+![Mobile PageSpeed Insights Score](./assets/pagespeed-score.jpg)
+
+---
+
 ## 📋 Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Main Features](#-main-features)
-- [Technologies & Tech Stack](#-technologies--tech-stack)
-- [Server-Side Rendering (SSR) Architecture](#-server-side-rendering-ssr-architecture)
-- [Folder Structure](#-folder-structure)
-- [Component Breakdown](#-component-breakdown)
-- [Form Management & Integration](#-form-management--integration)
-- [Performance & Pre-rendering Strategies](#-performance--pre-rendering-strategies)
-- [Installation & Setup](#-installation--setup)
+* [Project Overview](#-project-overview)
+* [Main Features](#-main-features)
+* [Technologies & Tech Stack](#-technologies--tech-stack)
+* [Server-Side Rendering (SSR) Architecture](#-server-side-rendering-ssr-architecture)
+* [Folder Structure](#-folder-structure)
+* [Component Breakdown](#-component-breakdown)
+* [Form Management & Integration](#-form-management--integration)
+* [Performance & Pre-rendering Strategies](#-performance--pre-rendering-strategies)
+* [Installation & Setup](#-installation--setup)
 
 ## 🌟 Project Overview
 
@@ -35,21 +56,21 @@ Key architectural priorities include:
 
 ## ✨ Main Features
 
-- **Angular 22 Hydration:** Enables smooth transition from server-rendered markup to active client-side reactivity.
-- **Pre-rendered Server Routes:** Pre-compiles paths via `app.routes.server.ts` for efficient static delivery.
-- **Responsive Mobile Navigation:** Interactive off-canvas sidebar drawer with accessible state handling (`isMenuOpen`).
-- **Reactive Contact Form:** Form controls powered by `FormBuilder.nonNullable` with immediate validation feedback.
-- **Vector Graphics & Layout:** Scalable vector artwork and structured UI sections for brand representation.
-- **Location & Map Integration:** Integrated interactive location embeds for user navigation.
+* **Angular 22 Hydration:** Enables smooth transition from server-rendered markup to active client-side reactivity.
+* **Pre-rendered Server Routes:** Pre-compiles paths via `app.routes.server.ts` for efficient static delivery.
+* **Responsive Mobile Navigation:** Interactive off-canvas sidebar drawer with accessible state handling (`isMenuOpen`).
+* **Reactive Contact Form:** Form controls powered by `FormBuilder.nonNullable` with immediate validation feedback.
+* **Vector Graphics & Layout:** Scalable vector artwork and structured UI sections for brand representation.
+* **Location & Map Integration:** Integrated interactive location embeds for user navigation.
 
 ## 🛠️ Technologies & Tech Stack
 
-- **Framework:** Angular 22.0.0 (`@angular/core`, `@angular/common`, `@angular/router`, `@angular/forms`)
-- **SSR Engine:** `@angular/ssr` (`^22.0.7`) & `@angular/platform-server` (`^22.0.0`)
-- **Server Runtime:** Express (`^5.1.0`) with `AngularNodeAppEngine`
-- **Language:** TypeScript (`~6.0.2`)
-- **Form Integration:** REST Endpoint Handling via `HttpClient`
-- **Build Tooling:** `@angular/build` (`^22.0.7`), `@angular/cli` (`^22.0.7`), Vitest (`^4.0.8`)
+* **Framework:** Angular 22.0.0 (`@angular/core`, `@angular/common`, `@angular/router`, `@angular/forms`)
+* **SSR Engine:** `@angular/ssr` (`^22.0.7`) & `@angular/platform-server` (`^22.0.0`)
+* **Server Runtime:** Express (`^5.1.0`) with `AngularNodeAppEngine`
+* **Language:** TypeScript (`~6.0.2`)
+* **Form Integration:** REST Endpoint Handling via `HttpClient`
+* **Build Tooling:** `@angular/build` (`^22.0.7`), `@angular/cli` (`^22.0.7`), Vitest (`^4.0.8`)
 
 ## 🏛️ Server-Side Rendering (SSR) Architecture
 
@@ -195,8 +216,8 @@ export const serverRoutes: ServerRoute[] = [
 ];
 ```
 
-- **Static Pre-rendering:** Sets `RenderMode.Prerender` across application paths during build execution (`ng build`) for optimal CDN hosting.
-- **Express Server Execution:** Provides `AngularNodeAppEngine` in `server.ts` to process dynamically served SSR requests on demand.
+* **Static Pre-rendering:** Sets `RenderMode.Prerender` across application paths during build execution (`ng build`) for optimal CDN hosting.
+* **Express Server Execution:** Provides `AngularNodeAppEngine` in `server.ts` to process dynamically served SSR requests on demand.
 
 ## 💻 Installation & Setup
 
@@ -226,4 +247,4 @@ export const serverRoutes: ServerRoute[] = [
    ```bash
    npm run serve:ssr:environmentalService
    # Runs Node Express server on http://localhost:4000
-   ```
+   ```<img width="861" height="678" alt="Screen Shot 2026-11-05 at 7 06 51 PM" src="https://github.com/user-attachments/assets/777adfce-c3f3-4759-911b-3ef9d0ca7004" />
