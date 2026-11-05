@@ -1,59 +1,229 @@
-# EnvironmentalService
+# Angular 22 SSR Environmental Service Landing Page
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.7.
+A high-performance, enterprise-grade **Server-Side Rendered (SSR) Landing Page** built with **Angular 22** for an environmental services platform. Designed with an RTL-first architecture, this application presents core service offerings, regulatory compliance credentials, and interactive contact channels.
 
-## Development server
+The project demonstrates modern Angular patterns using `@angular/ssr`, Node.js/Express server engine rendering, static pre-rendering fallback, and hydrated Angular Signals for dynamic client interactive components.
 
-To start a local development server, run:
+## 🔗 Live Demo
 
-```bash
-ng serve
+Experience the live application online:
+
+🚀 [**View Live Demo**](https://masreyaenvironment.com)
+
+## 📋 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Main Features](#-main-features)
+- [Technologies & Tech Stack](#-technologies--tech-stack)
+- [Server-Side Rendering (SSR) Architecture](#-server-side-rendering-ssr-architecture)
+- [Folder Structure](#-folder-structure)
+- [Component Breakdown](#-component-breakdown)
+- [Form Management & Integration](#-form-management--integration)
+- [Performance & Pre-rendering Strategies](#-performance--pre-rendering-strategies)
+- [Installation & Setup](#-installation--setup)
+
+## 🌟 Project Overview
+
+This landing page serves as a primary digital interface for corporate client inquiries and regulatory visibility. It emphasizes fast initial load times, complete search engine indexability, and clean mobile navigation.
+
+Key architectural priorities include:
+
+1. **Performance & SEO:** Utilizes Server-Side Rendering (`provideServerRendering`) and route pre-rendering (`RenderMode.Prerender`).
+2. **Client Hydration:** Delivers zero-flicker HTML hydration using `provideClientHydration()`.
+3. **Native RTL Layout:** Structured specifically for Right-to-Left language directionality (`dir="rtl"`).
+4. **Decoupled Form Processing:** Sends user inquiries directly to external API endpoints for seamless lead management.
+
+## ✨ Main Features
+
+- **Angular 22 Hydration:** Enables smooth transition from server-rendered markup to active client-side reactivity.
+- **Pre-rendered Server Routes:** Pre-compiles paths via `app.routes.server.ts` for efficient static delivery.
+- **Responsive Mobile Navigation:** Interactive off-canvas sidebar drawer with accessible state handling (`isMenuOpen`).
+- **Reactive Contact Form:** Form controls powered by `FormBuilder.nonNullable` with immediate validation feedback.
+- **Vector Graphics & Layout:** Scalable vector artwork and structured UI sections for brand representation.
+- **Location & Map Integration:** Integrated interactive location embeds for user navigation.
+
+## 🛠️ Technologies & Tech Stack
+
+- **Framework:** Angular 22.0.0 (`@angular/core`, `@angular/common`, `@angular/router`, `@angular/forms`)
+- **SSR Engine:** `@angular/ssr` (`^22.0.7`) & `@angular/platform-server` (`^22.0.0`)
+- **Server Runtime:** Express (`^5.1.0`) with `AngularNodeAppEngine`
+- **Language:** TypeScript (`~6.0.2`)
+- **Form Integration:** REST Endpoint Handling via `HttpClient`
+- **Build Tooling:** `@angular/build` (`^22.0.7`), `@angular/cli` (`^22.0.7`), Vitest (`^4.0.8`)
+
+## 🏛️ Server-Side Rendering (SSR) Architecture
+
+```
++-----------------------------------------------------------------------------------+
+|                                  Client Browser                                   |
+|                             (Initial Page Request)                                |
++-----------------------------------------+-----------------------------------------+
+                                          |
+                                          v
++-----------------------------------------------------------------------------------+
+|                                Express / Node Engine                              |
+|                                    (server.ts)                                    |
+|   • Serves static assets from /browser/ (maxAge: 1y)                              |
+|   • Delegates dynamic requests to AngularNodeAppEngine                            |
++-----------------------------------------+-----------------------------------------+
+                                          |
+                                          v
++-----------------------------------------------------------------------------------+
+|                              Angular Server Runtime                               |
+|   • app.config.server.ts -> provideServerRendering(withRoutes(serverRoutes))      |
+|   • app.routes.server.ts -> RenderMode.Prerender for route '**'                   |
++-----------------------------------------+-----------------------------------------+
+                                          |
+                                          v
++-----------------------------------------------------------------------------------+
+|                                Client Hydration                                   |
+|   • app.config.ts -> provideClientHydration()                                     |
+|   • Hydrates static markup with reactive event bindings                           |
++-----------------------------------------------------------------------------------+
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📂 Folder Structure
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── main.ts                       # Client bootstrap entry point
+├── main.server.ts                # Server bootstrap entry point
+├── server.ts                     # Express server setup with AngularNodeAppEngine
+├── index.html                    # Base HTML document
+├── styles.css                    # Global application styles
+└── app/
+    ├── app.ts                    # Root component layout container
+    ├── app.html                  # Main component composition template
+    ├── app.config.ts             # Client config (Router, ClientHydration, HttpClient)
+    ├── app.config.server.ts      # Server config merging client and SSR providers
+    ├── app.routes.ts             # Client routing definitions
+    ├── app.routes.server.ts      # SSR pre-rendering route rules
+    └── core/
+        ├── hero/                 # Hero banner & main navigation header
+        │   ├── hero.ts
+        │   ├── hero.html
+        │   └── hero.css
+        ├── about/                # Organization profile & overview
+        │   ├── about.ts
+        │   ├── about.html
+        │   └── about.css
+        ├── our-service/          # Overview of core services offered
+        │   ├── our-service.ts
+        │   ├── our-service.html
+        │   └── our-service.css
+        ├── choose-us/            # Key features & capabilities
+        │   ├── choose-us.ts
+        │   ├── choose-us.html
+        │   └── choose-us.css
+        ├── contact/              # Interactive inquiry form & contact details
+        │   ├── contact.ts
+        │   ├── contact.html
+        │   └── contact.css
+        └── footer/               # Footer layout & useful links
+            ├── footer.ts
+            ├── footer.html
+            └── footer.css
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🧱 Component Breakdown
 
-```bash
-ng generate --help
+### 1. `App` (`app.ts`)
+The root container component orchestrating the main single-page layout hierarchy: `<app-hero>`, `<app-about>`, `<app-our-service>`, `<app-choose-us>`, `<app-contact>`, and `<app-footer>`.
+
+### 2. `Hero` (`hero.ts`)
+Handles top-level navigation, responsive off-canvas menu state toggles, and main call-to-action elements.
+
+### 3. `About` (`about.ts`)
+Presents an overview of the organization, core operational scope, and compliance standards.
+
+### 4. `ChooseUs` (`choose-us.ts`)
+Highlights key operational capabilities, technical expertise, and fleet readiness.
+
+### 5. `Contact` (`contact.ts`)
+Manages the user inquiry interface, form controls, contact information layout, and embedded map view.
+
+### 6. `Footer` (`footer.ts`)
+Displays site navigational links, secondary contacts, and automated copyright year computation.
+
+## 📝 Form Management & Integration
+
+The contact section employs Angular's `FormBuilder.nonNullable` reactive forms to capture client requests cleanly:
+
+```typescript
+// contact.ts
+export class Contact {
+  isSubmitted = signal(false);
+  private formBuilder = inject(FormBuilder).nonNullable;
+  private http = inject(HttpClient);
+
+  form = this.formBuilder.group({
+    name: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    message: [''],
+    phone: ['', [Validators.required]],
+  });
+
+  onSubmit() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+    this.http.post('YOUR_FORM_ENDPOINT', this.form.value).subscribe({
+      next: () => {
+        this.form.reset();
+        this.isSubmitted.set(true);
+      },
+      error: (error) => {
+        console.error('Form submission failed', error);
+      }
+    });
+  }
+}
 ```
 
-## Building
+## ⚡ Performance & Pre-rendering Strategies
 
-To build the project run:
+```typescript
+// app.routes.server.ts
+import { RenderMode, ServerRoute } from '@angular/ssr';
 
-```bash
-ng build
+export const serverRoutes: ServerRoute[] = [
+  {
+    path: '**',
+    renderMode: RenderMode.Prerender
+  }
+];
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Static Pre-rendering:** Sets `RenderMode.Prerender` across application paths during build execution (`ng build`) for optimal CDN hosting.
+- **Express Server Execution:** Provides `AngularNodeAppEngine` in `server.ts` to process dynamically served SSR requests on demand.
 
-## Running unit tests
+## 💻 Installation & Setup
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/environmental-service.git
+   cd environmental-service
+   ```
 
-```bash
-ng test
-```
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Running end-to-end tests
+3. **Start Development Server:**
+   ```bash
+   npm start
+   # Serves on http://localhost:4200
+   ```
 
-For end-to-end (e2e) testing, run:
+4. **Build Production SSR Package:**
+   ```bash
+   npm run build
+   ```
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+5. **Run SSR Production Server:**
+   ```bash
+   npm run serve:ssr:environmentalService
+   # Runs Node Express server on http://localhost:4000
+   ```
